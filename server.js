@@ -102,8 +102,8 @@ console.log(`📝 [${new Date().toLocaleString()}] Generated Tweet:\n${tweet}`);
   }
 }
 
-// Run every minute (for testing) u can change the time
-setInterval(generateAndOptionallyTweet, 60 * 1000); // 60 seconds
+// Run every 100 minute, u can change the time
+setInterval(generateAndOptionallyTweet, 100 * 60 * 1000); // every 100 minutes ✅
 
 // Root route
 app.get('/', (req, res) => {

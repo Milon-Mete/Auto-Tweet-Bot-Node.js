@@ -96,14 +96,14 @@ async function generateAndOptionallyTweet() {
 
 
   try {
-    //const { data } = await twitterClient.v2.tweet(tweet);
+    const { data } = await twitterClient.v2.tweet(tweet);
     console.log("✅ Tweet posted:", data);
   } catch (err) {
     console.error("❌ Failed to post tweet:", err.response?.data || err.message);
   }
 }
 
-// Run every minute (for testing)
+// Run every minute (for testing) u can change the time
 setInterval(generateAndOptionallyTweet, 60 * 1000); // 60 seconds
 
 // Root route
@@ -116,7 +116,7 @@ res.send(`
   );
 });
 
-// Generate tweet manually
+// Generate tweet manually, when u visit this url bot imidiate generate tweet and post without waiting for time
 app.get('/generate-now', async (req, res) => {
   await generateAndOptionallyTweet();
   res.send("✅ Tweet generated manually.");

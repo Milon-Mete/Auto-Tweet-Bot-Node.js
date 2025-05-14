@@ -21,6 +21,9 @@ const postedHeadlines = new Set();
 const topics = ['sports', 'technology', 'entertainment'];
 let currentTopicIndex = 0;
 
+let lastGeneratedTweet = '';
+let lastGeneratedNews = '';
+
 function isDuplicateHeadline(headline) {
   return postedHeadlines.has(headline);
 }

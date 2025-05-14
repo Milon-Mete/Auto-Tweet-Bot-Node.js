@@ -92,8 +92,7 @@ async function generateAndOptionallyTweet() {
   }
   lastGeneratedTweet = tweet;
   lastGeneratedNews = news
-  console.log("📝 Generated Tweet:\n", tweet);
-
+console.log(`📝 [${new Date().toLocaleString()}] Generated Tweet:\n${tweet}`);
 
   try {
     const { data } = await twitterClient.v2.tweet(tweet);

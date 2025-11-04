@@ -59,7 +59,7 @@ async function generateTweetFromNews(newsText) {
     const prompt = `Convert this sports news headline into a viral, witty tweet for Indian audiences. Keep it under 280 characters:\n"${newsText}"`;
 
     const res = await axios.post(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
       {
         contents: [{ parts: [{ text: prompt }] }]
       },
@@ -128,3 +128,4 @@ app.get('/generate-now', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`🚀 Server started at http://localhost:${PORT}`);
 });
+
